@@ -69,7 +69,7 @@ if (!isset($_SESSION['data'])) {
 
 if (isset($authToken) && $authToken == 'token123') {
     $path = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
-    $module = end($path) === 'items' ? 'items' : $path[1] ?? null;
+    $module = end($path) === 'items' ? 'items' : $path[2] ?? null;
     if ($module != 'items') {
         http_response_code(404);
         die(json_encode(['error' => 'module not found']));
