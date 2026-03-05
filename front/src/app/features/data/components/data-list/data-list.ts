@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataItem } from '../data-item/data-item';
+import { Observable } from 'rxjs';
+import { Data } from '../../models/data.model';
+import { AsyncPipe } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-data-list',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './data-list.html',
   styleUrl: './data-list.css',
 })
-export class DataList {
+export class DataList implements OnInit {
+  data$!: Observable<Data[]>;
+  private dataService!: DataService;
 
+  constructor(dataService: DataService) {
+    this.dataService = dataService;
+  }
+
+  ngOnInit(): void {
+    this.data$ = this.dataService.getData();
+  }
 }
