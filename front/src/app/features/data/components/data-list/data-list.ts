@@ -7,7 +7,7 @@ import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-data-list',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, DataItem],
   templateUrl: './data-list.html',
   styleUrl: './data-list.css',
 })
