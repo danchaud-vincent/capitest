@@ -1,0 +1,8 @@
+.dashboard {
+  display: flex;
+  gap: 2rem;
+}
+
+.dataList {
+  width: 30%;
+}

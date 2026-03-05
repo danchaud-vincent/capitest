@@ -1,3 +1,10 @@
-@for (dataItem of data$ | async; track $index) {
-  <app-data-item [dataValue]="dataItem"></app-data-item>
-}
+<div class="dashboard">
+  <div class="dataList">
+    @for (dataItem of data$ | async; track $index) {
+      <app-data-item [dataValue]="dataItem"></app-data-item>
+    }
+  </div>
+  <div>
+    <p>Update</p>
+  </div>
+</div>
