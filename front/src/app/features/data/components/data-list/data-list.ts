@@ -6,10 +6,11 @@ import { AsyncPipe } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { DataDetail } from '../data-detail/data-detail';
 import { Card } from '../../../../shared/card/card';
+import { DataUpdate } from '../data-update/data-update';
 
 @Component({
   selector: 'app-data-list',
-  imports: [AsyncPipe, DataItem, DataDetail, Card],
+  imports: [AsyncPipe, DataItem, DataDetail, Card, DataUpdate],
   templateUrl: './data-list.html',
   styleUrl: './data-list.css',
 })
