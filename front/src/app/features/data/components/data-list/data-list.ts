@@ -4,10 +4,12 @@ import { Observable } from 'rxjs';
 import { Data } from '../../models/data.model';
 import { AsyncPipe } from '@angular/common';
 import { DataService } from '../../services/data.service';
+import { DataDetail } from '../data-detail/data-detail';
+import { Card } from '../../../../shared/card/card';
 
 @Component({
   selector: 'app-data-list',
-  imports: [AsyncPipe, DataItem],
+  imports: [AsyncPipe, DataItem, DataDetail, Card],
   templateUrl: './data-list.html',
   styleUrl: './data-list.css',
 })
