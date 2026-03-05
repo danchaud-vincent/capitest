@@ -17,6 +17,8 @@ export class DataUpdate {
 
   onSubmit() {
     const dataUpdate: DataUpdateRequest = { title: this.dataTitle };
-    this.dataService.updateData(this.dataId, dataUpdate);
+    this.dataService.updateData(this.dataId, dataUpdate).subscribe((updated) => {
+      console.log('Updated data: ', updated);
+    });
   }
 }

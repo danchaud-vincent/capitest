@@ -24,7 +24,8 @@ export class DataList implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data$ = this.dataService.getData();
+    this.data$ = this.dataService.data$;
+    this.dataService.loadData();
   }
 
   onSelect(dataSelected: Data) {
