@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Data } from '../../models/data.model';
 
 @Component({
@@ -9,4 +9,9 @@ import { Data } from '../../models/data.model';
 })
 export class DataItem {
   @Input({ required: true }) dataValue!: Data;
+  @Output() select = new EventEmitter<Data>();
+
+  selectData() {
+    this.select.emit(this.dataValue);
+  }
 }
