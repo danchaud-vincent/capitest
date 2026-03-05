@@ -1,0 +1,24 @@
+<div class="dashboard">
+  <div class="dataList">
+    <ul>
+      @for (dataItem of data$ | async; track $index) {
+        <li>
+          <app-card>
+            <app-data-item [dataValue]="dataItem" (select)="onSelect($event)"></app-data-item>
+          </app-card>
+        </li>
+      }
+    </ul>
+  </div>
+  <div>
+    @if (dataSelected) {
+      <app-data-update
+        [dataId]="dataSelected.id"
+        [dataTitle]="dataSelected.title"
+      ></app-data-update>
+      <app-data-detail [data]="dataSelected"></app-data-detail>
+    } @else {
+      <p>Select a data to see their detail!</p>
+    }
+  </div>
+</div>
