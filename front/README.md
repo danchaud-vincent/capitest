@@ -1,59 +1,66 @@
-# Front
+# CAPITEST
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Entretien technique pour l'entreprise CapiTechnic.
 
-## Development server
+Attendu :
 
-To start a local development server, run:
+L’application devra :
 
-```bash
-ng serve
-```
+1. Envoyer un token d’authentification lors des requêtes HTTP.
+2. Récupérer les données exposées par l’API.
+3. Afficher ces données sous forme de liste.
+4. Permettre l’affichage détaillé d’un élément dans un composant dédié.
+5. Modifier le titre d’un élément via un appel API (`PUT`).
+6. Afficher les données mises à jour après modification.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Setps to Setup
 
-## Code scaffolding
+### Front
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**1. Clone the application**
 
 ```bash
-ng generate --help
+git clone https://github.com/danchaud-vincent/capitest.git
 ```
 
-## Building
-
-To build the project run:
+**2. Go inside the front folder (from the project root)**
 
 ```bash
-ng build
+cd front
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+**3. Install dependencies**
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+**4. To start a local development server, run:**
 
 ```bash
-ng e2e
+npm run start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+or
 
-## Additional Resources
+```bash
+ng serve --open
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modif
+
+### Back
+
+- Install WampServer.
+- Launch the application WampServer.
+
+## Technologies used in this project :
+
+- Angular version 19.2
+- WampServer
+- PHP
+- Apache
+
+## Author :
+
+**Danchaud Vincent**
