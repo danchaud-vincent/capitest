@@ -12,7 +12,10 @@
   </div>
   <div>
     @if (dataSelected) {
-      <app-data-update [dataTitle]="dataSelected.title"></app-data-update>
+      <app-data-update
+        [dataId]="dataSelected.id"
+        [dataTitle]="dataSelected.title"
+      ></app-data-update>
       <app-data-detail [data]="dataSelected"></app-data-detail>
     } @else {
       <p>Select a data to see their detail!</p>

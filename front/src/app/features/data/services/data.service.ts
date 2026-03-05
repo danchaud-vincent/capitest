@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Data } from '../models/data.model';
+import { DataUpdateRequest } from '../models/dataUpdate.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +26,7 @@ export class DataService {
     );
   }
 
-  updateData(dataTitle: string): void {
-    console.log('update');
+  updateData(dataId: string, dataUpdate: DataUpdateRequest): Observable<Data> {
+    return this.http.put<Data>(`http://localhost/capitest/back/items/${dataId}`, dataUpdate);
   }
 }
