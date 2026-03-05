@@ -2,11 +2,15 @@
   <div class="dataList">
     @for (dataItem of data$ | async; track $index) {
       <app-card>
-        <app-data-item [dataValue]="dataItem"></app-data-item>
+        <app-data-item [dataValue]="dataItem" (select)="onSelect($event)"></app-data-item>
       </app-card>
     }
   </div>
   <div>
-    <app-data-detail></app-data-detail>
+    @if (dataSelected) {
+      <app-data-detail></app-data-detail>
+    } @else {
+      <p>Select a data to see their detail!</p>
+    }
   </div>
 </div>

@@ -15,6 +15,7 @@ import { Card } from '../../../../shared/card/card';
 })
 export class DataList implements OnInit {
   data$!: Observable<Data[]>;
+  dataSelected?: Data;
   private dataService!: DataService;
 
   constructor(dataService: DataService) {
@@ -23,5 +24,13 @@ export class DataList implements OnInit {
 
   ngOnInit(): void {
     this.data$ = this.dataService.getData();
+  }
+
+  onSelect(dataSelected: Data) {
+    this.dataSelected = dataSelected;
+  }
+
+  get selectedData() {
+    return this.dataSelected;
   }
 }
