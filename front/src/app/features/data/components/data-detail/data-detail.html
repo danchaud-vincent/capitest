@@ -1,2 +1,17 @@
 <p>{{ data.description }}</p>
 <p>{{ data.date }}</p>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Historique des titres</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (dataTitle of data.titleHistory; track $index) {
+      <tr>
+        <td>{{ dataTitle }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
