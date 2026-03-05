@@ -1,14 +1,18 @@
 <div class="dashboard">
   <div class="dataList">
-    @for (dataItem of data$ | async; track $index) {
-      <app-card>
-        <app-data-item [dataValue]="dataItem" (select)="onSelect($event)"></app-data-item>
-      </app-card>
-    }
+    <ul>
+      @for (dataItem of data$ | async; track $index) {
+        <li>
+          <app-card>
+            <app-data-item [dataValue]="dataItem" (select)="onSelect($event)"></app-data-item>
+          </app-card>
+        </li>
+      }
+    </ul>
   </div>
   <div>
     @if (dataSelected) {
-      <app-data-detail></app-data-detail>
+      <app-data-detail [data]="dataSelected"></app-data-detail>
     } @else {
       <p>Select a data to see their detail!</p>
     }

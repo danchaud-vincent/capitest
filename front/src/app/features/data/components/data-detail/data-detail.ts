@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Data } from '../../models/data.model';
 
 @Component({
   selector: 'app-data-detail',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './data-detail.css',
 })
 export class DataDetail {
-
+  @Input({ required: true }) data!: Data;
 }
